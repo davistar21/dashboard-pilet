@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { fetchPosts } from "../api/posts";
 
-interface Post {
+export interface Post {
   id: number;
   title: string;
   body: string;
