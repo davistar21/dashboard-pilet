@@ -7,8 +7,6 @@ import { Skeleton } from "../components/Skeleton";
 
 const PostDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  // const [post, setPost] = useState<Post | null>(null);
-  // const [loading, setLoading] = useState(true);
   const { posts, fetchAll, loading } = usePostsStore();
   useEffect(() => {
     if (posts.length === 0) fetchAll();
