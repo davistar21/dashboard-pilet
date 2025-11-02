@@ -19,9 +19,7 @@ export function setup(app: PiletApi) {
   ));
   const PostDetail = React.lazy(() => import("./pages/PostDetail"));
   app.registerPage("/dashboard/:id", () => (
-    <React.Suspense
-      fallback={<p className="p-6 text-[var(--color-secondary)]">Loading...</p>}
-    >
+    <React.Suspense fallback={<p className="p-6 text-secondary">Loading...</p>}>
       <PostDetail />
     </React.Suspense>
   ));
