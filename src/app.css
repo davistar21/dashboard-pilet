@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define app-wide theme variables */
+@layer base {
+  :root {
+    --color-bg: #f8fafc;
+    --color-primary: #2563eb;
+    --color-secondary: #64748b;
+    --color-accent: #0ea5e9;
+    --color-text: #1e293b;
+  }
+
+  body {
+    @apply bg-[var(--color-bg)] text-[var(--color-text)] font-sans;
+  }
+}
+
+/* Reusable utility classes */
+@layer components {
+  .card {
+    @apply bg-white shadow-sm rounded-2xl p-4 border border-gray-100 hover:shadow-md transition-shadow;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium text-white bg-[var(--color-primary)] hover:bg-blue-700 transition-colors;
+  }
+
+  .title {
+    @apply text-2xl font-semibold text-[var(--color-primary)] mb-4;
+  }
+}
