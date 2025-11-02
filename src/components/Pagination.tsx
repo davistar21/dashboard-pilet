@@ -1,9 +1,11 @@
 import React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export interface PaginationProps {
   page: number;
   perPage?: number;
-  total?: number; // optional if you know total
+  total?: number;
   onPageChange: (page: number) => void;
   maxPagesToShow?: number;
 }
@@ -15,10 +17,9 @@ export function Pagination({
   onPageChange,
   maxPagesToShow = 5,
 }: PaginationProps) {
-  const totalPages = total ? Math.max(1, Math.ceil(total / perPage)) : 10; // default to 10 pages if unknown
+  const totalPages = total ? Math.max(1, Math.ceil(total / perPage)) : 10;
   const current = Math.max(1, page);
 
-  // compute window of pages
   const half = Math.floor(maxPagesToShow / 2);
   let start = Math.max(1, current - half);
   let end = Math.min(totalPages, start + maxPagesToShow - 1);
@@ -29,38 +30,46 @@ export function Pagination({
   const pages = Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
   return (
-    <nav className="flex items-center gap-2 mt-6">
-      <button
-        className="btn bg-gray-200 text-gray-700 hover:bg-gray-300"
+    <div className="flex items-center gap-2 mt-6 justify-center flex-nowrap w-full">
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={() => onPageChange(Math.max(1, current - 1))}
         disabled={current === 1}
+        className="flex items-center gap-1 px-3 py-1 rounded-md bg-indigo-100 text-[var(--color-primary)] hover:bg-indigo-200 disabled:opacity-50 transition-colors"
       >
+        <ChevronLeft size={16} />
         Prev
-      </button>
-
-      {pages.map((p) => (
-        <button
-          key={p}
-          onClick={() => onPageChange(p)}
-          className={`px-3 py-1 rounded-md ${
-            p === current
-              ? "bg-[var(--color-primary)] text-white"
-              : "bg-white border"
-          }`}
-          aria-current={p === current ? "page" : undefined}
-        >
-          {p}
-        </button>
-      ))}
-
-      <button
-        className="btn bg-gray-200 text-gray-700 hover:bg-gray-300"
+      </motion.button>
+      <div className="inline">
+        {pages.map((p) => (
+          <motion.button
+            key={p}
+            onClick={() => onPageChange(p)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`px-3 py-1 rounded-md border font-medium transition-colors ${
+              p === current
+                ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)]"
+                : "bg-white text-text border-gray-300 hover:bg-indigo-50"
+            }`}
+            aria-current={p === current ? "page" : undefined}
+          >
+            {p}
+          </motion.button>
+        ))}
+      </div>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={() => onPageChange(Math.min(totalPages, current + 1))}
         disabled={current === totalPages}
+        className="flex items-center gap-1 px-3 py-1 rounded-md bg-indigo-100 text-[var(--color-primary)] hover:bg-indigo-200 disabled:opacity-50 transition-colors"
       >
         Next
-      </button>
-    </nav>
+        <ChevronRight size={16} />
+      </motion.button>
+    </div>
   );
 }
 

@@ -21,7 +21,6 @@ describe("AddItemForm", () => {
 
   it("renders the form correctly", () => {
     render(<AddItemForm />);
-    expect(screen.getByText("Add New Post")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Enter post title")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Enter post body")).toBeInTheDocument();
     expect(

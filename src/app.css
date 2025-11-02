@@ -1,31 +1,27 @@
 @import "tailwindcss";
 
-/* Define theme-level variables inline */
 @theme inline {
-  --color-background: #f8fafc;
-  --color-primary: #2563eb;
-  --color-secondary: #64748b;
-  --color-accent: #0ea5e9;
-  --color-text: #1e293b;
+  --color-background: #f9fafb;
+  --color-primary: #312e81;
+  --color-secondary: #4c51bf;
+  --color-accent: #6366f1;
+  --color-text: #1f2937;
 
-  /* Optional radius and font scale if you want reusable tokens */
   --radius: 0.5rem;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Base layer styling */
 body {
   @apply bg-background text-text font-sans;
 }
 
-/* Component utilities */
 @layer components {
   .card {
     @apply bg-white shadow-sm rounded-2xl p-4 border border-gray-100 hover:shadow-md transition-shadow;
   }
 
   .btn {
-    @apply px-4 py-2 rounded-md font-medium text-white bg-primary hover:bg-blue-700 transition-colors;
+    @apply px-4 py-2 rounded-md font-medium text-white bg-primary hover:bg-secondary transition-colors;
   }
 
   .title {
