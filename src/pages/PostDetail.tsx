@@ -18,8 +18,7 @@ const PostDetail: React.FC = () => {
     }
   }, [id]);
 
-  if (loading)
-    return <p className="p-6 text-[var(--color-secondary)]">Loading post...</p>;
+  if (loading) return <p className="p-6 text-secondary">Loading post...</p>;
   if (!post) return <p className="p-6 text-red-500">Post not found.</p>;
 
   return (
