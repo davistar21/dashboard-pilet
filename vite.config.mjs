@@ -4,16 +4,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "dist", // Piral always outputs here
+    outDir: "dist",
     emptyOutDir: true,
   },
   server: {
     watch: {
-      ignored: [
-        "**/dist/**",
-        "**/.vite/**",
-        "**/emulator/**", // Piral places tgz files here
-      ],
+      ignored: ["**/dist/**", "**/.vite/**", "**/emulator/**"],
     },
   },
 });
