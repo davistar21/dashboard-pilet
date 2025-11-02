@@ -1,10 +1,8 @@
-// AddItemForm.test.tsx
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { AddItemForm } from "../AddItemForm";
 import { usePostsStore } from "../../store/PostStore";
 
-// Mock the store
 jest.mock("../../store/PostStore", () => ({
   usePostsStore: jest.fn(),
 }));
@@ -40,24 +38,19 @@ describe("AddItemForm", () => {
     ) as HTMLTextAreaElement;
     const submitButton = screen.getByRole("button", { name: /add post/i });
 
-    // Fill in the form
     fireEvent.change(titleInput, { target: { value: "Test Title" } });
     fireEvent.change(bodyInput, { target: { value: "Test Body" } });
 
-    // Submit the form
     fireEvent.click(submitButton);
 
-    // Check that addLocalPost was called with correct values
     expect(addLocalPostMock).toHaveBeenCalledWith({
       title: "Test Title",
       body: "Test Body",
     });
 
-    // Check that the inputs are cleared
     expect(titleInput.value).toBe("");
     expect(bodyInput.value).toBe("");
 
-    // Check that onSuccess was called
     expect(onSuccessMock).toHaveBeenCalled();
   });
 

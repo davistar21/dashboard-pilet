@@ -9,9 +9,6 @@ const Page = React.lazy(() => import("./Page"));
 export function setup(app: PiletApi) {
   app.registerPage("/dashboard", Dashboard);
 
-  // app.showNotification("Hello from Piral!", {
-  //   autoClose: 2000,
-  // });
   app.registerMenu(() => (
     <Link to="/dashboard" className="px-3 py-2 text-sm hover:text-">
       Dashboard

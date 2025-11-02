@@ -27,7 +27,7 @@ describe("Pagination", () => {
         onPageChange={onPageChange}
       />
     );
-    // Prev button, page buttons, Next
+
     expect(screen.getByText("Prev")).toBeInTheDocument();
     expect(screen.getByText("Next")).toBeInTheDocument();
   });

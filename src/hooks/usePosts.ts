@@ -1,4 +1,3 @@
-// src/hooks/usePosts.ts
 import { useEffect } from "react";
 import { type Post, usePostsStore } from "../store/PostStore";
 
@@ -25,9 +24,7 @@ export function usePosts(): UsePostsResult {
   } = usePostsStore();
 
   useEffect(() => {
-    // initial load
     fetchAll(currentPage, perPage);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

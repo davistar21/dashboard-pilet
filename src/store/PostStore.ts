@@ -51,7 +51,6 @@ export const usePostsStore = create<PostsState>()(
       },
 
       setPage: async (page: number) => {
-        // call fetchAll and return promise so consumers (hooks/components) can await if needed
         await get().fetchAll(page, get().perPage);
       },
 
