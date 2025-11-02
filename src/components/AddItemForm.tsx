@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { InputField } from "./InputField";
 import { usePostsStore } from "../store/PostStore";
 
-export const AddItemForm: React.FC = () => {
+interface AddItemFormProps {
+  onSuccess?: () => void;
+}
+
+export const AddItemForm: React.FC<AddItemFormProps> = ({ onSuccess }) => {
   const { addLocalPost } = usePostsStore();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -16,6 +20,8 @@ export const AddItemForm: React.FC = () => {
 
     setTitle("");
     setBody("");
+
+    if (onSuccess) onSuccess();
   };
 
   return (

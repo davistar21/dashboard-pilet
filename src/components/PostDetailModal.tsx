@@ -33,10 +33,10 @@ export const PostDetailModal: React.FC<PostDetailModalProps> = ({
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="bg-white dark:bg-gray-900 p-6 rounded-2xl w-[90%] max-w-lg shadow-2xl"
           >
-            <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-4">
+            <h2 className="text-2xl font-bold text-primary mb-4">
               {post.title}
             </h2>
-            <p className="text-[var(--color-secondary)] mb-6 whitespace-pre-line">
+            <p className="text-secondary mb-6 whitespace-pre-line">
               {post.body}
             </p>
 
@@ -49,7 +49,7 @@ export const PostDetailModal: React.FC<PostDetailModalProps> = ({
               </button>
               <button
                 onClick={() => history.push(`/dashboard/${post.id}`)}
-                className="btn bg-[var(--color-primary)] text-white hover:opacity-90"
+                className="btn bg-primary text-white hover:opacity-90"
               >
                 View Full
               </button>

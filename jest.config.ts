@@ -10,4 +10,16 @@ export default {
   moduleNameMapper: {
     "\\.(css|scss)$": "identity-obj-proxy",
   },
+  reporters: [
+    "default",
+    [
+      "jest-html-reporter",
+      {
+        pageTitle: "Test Report",
+        outputPath: "reports/test-report.html",
+        includeFailureMsg: true,
+        includeSuiteFailure: true,
+      },
+    ],
+  ],
 };
