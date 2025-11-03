@@ -22,33 +22,33 @@ This dashboard fetches posts from the **JSONPlaceholder API**, allows adding new
 
 ## Features
 
-* **Dynamic Posts Dashboard**
+### **Dynamic Posts Dashboard**
 - Fetches paginated posts (10 per page) from JSONPlaceholder.
 - Displays posts using reusable `ItemCard` and `ItemList` components.
 
-* **Add Post (Local + Optimistic UI)**
+### **Add Post (Local + Optimistic UI)**
 - Add new posts locally via a modal form.
 - Newly added posts appear instantly at the top of the list.
 - Local posts are persisted with Zustand.
 
-* **Post Details**
+### **Post Details**
 - View detailed post content on `/dashboard/:id`.
 - Fetches data from Zustand store (not directly from API).
 
-* **Reusable Components**
+### **Reusable Components**
 - `AddItemForm`, `AddPostButton`, `Pagination`, and `InputField`.
 
-* **Modern UI & UX**
+### **Modern UI & UX**
 - TailwindCSS for rapid styling.
 - Theme system via CSS `@theme` block for shared colors.
 - Framer Motion for fluid animations.
 - Lucide React icons for consistent icons.
 
-* **State Management**
+### **State Management**
 - Centralized store using **Zustand**.
 - Local persistence with `zustand/middleware` (`persist`).
 
-* **Testing**
+### **Testing**
 - Comprehensive Jest + React Testing Library setup for component testing.
 
 ---
