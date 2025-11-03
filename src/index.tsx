@@ -10,7 +10,10 @@ export function setup(app: PiletApi) {
   app.registerPage("/dashboard", Dashboard);
 
   app.registerMenu(() => (
-    <Link to="/dashboard" className="px-3 py-2 text-sm hover:text-">
+    <Link
+      to="/dashboard"
+      className="px-3 py-2 hover:text-gray-500 border !border-gray-800 rounded-2xl !bg-gray-200"
+    >
       Dashboard
     </Link>
   ));

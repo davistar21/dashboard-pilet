@@ -4,8 +4,9 @@
   "importmapVersions": "match-major",
   "remoteTypesTarget": "./src/remote.d.ts",
   "piralInstances": {
-    "aptitude-test": {
-      "selected": true
+    "shell": {
+      "selected": true,
+      "path": "shell"
     }
   }
 }
