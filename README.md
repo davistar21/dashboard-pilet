@@ -52,7 +52,7 @@ This dashboard fetches posts from the **JSONPlaceholder API**, allows adding new
 - Comprehensive Jest + React Testing Library setup for component testing.
 
 ---
-# Dashboard
+## Dashboard Screenshot
 ![Dashboard](./public/pilet-screenshot.jpeg)
 ---
 
