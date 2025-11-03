@@ -120,10 +120,6 @@ Output will be available in:
 ```bash
 /dist
 ```
-If integrating into a Piral instance:
-
-Copy the `.tgz` file or link it using `pilet debug`.
-Register it in your Piral shell for `/dashboard`.
 
 ---
 
