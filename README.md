@@ -71,6 +71,20 @@ This dashboard fetches posts from the **JSONPlaceholder API**, allows adding new
 
 ---
 
+## Prerequisites & Assumptions
+
+Before running this project, please ensure the following:
+
+1. **Node.js v18.17+ (recommended v20 LTS)** and **npm v9+** are installed.  
+   Older versions may fail due to missing ESM or Fetch API support.
+
+2. **Piral CLI** must be installed globally for pilet development:
+   ```bash
+   npm install -g piral-cli
+
+
+---
+
 ## Setup & Installation
 
 This pilet can run **standalone locally** or be integrated into a **Piral shell**.
