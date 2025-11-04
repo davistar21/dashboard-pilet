@@ -6,7 +6,7 @@
   "piralInstances": {
     "shell": {
       "selected": true,
-      "path": "shell"
+      "path": "./shell"
     }
   }
 }
