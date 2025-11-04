@@ -2,7 +2,7 @@
   "name": "shell",
   "version": "1.0.0",
   "description": "",
-  "piralInstance":"true",
+  "piralInstance": true,
   "keywords": [
     "piral"
   ],
